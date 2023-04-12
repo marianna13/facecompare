@@ -2,9 +2,8 @@ import streamlit as st
 from PIL import Image
 import io
 from utils.search import search
-from utils.face_utils import get_emb, get_cossim, get_face_coords, smart_resize
+from utils.face_utils import get_face_coords, smart_resize
 import numpy as np
-import scipy.spatial as sp
 
 
 st.title('Поиск 🔎')

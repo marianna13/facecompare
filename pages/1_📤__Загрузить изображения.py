@@ -9,33 +9,6 @@ from utils.face_utils import get_face_coords, get_cossim, smart_resize, get_emb
 
 model = load_model(chpt='app\checkpoints\infoVAE_39.pth')
 
-
-def nav_page(page_name, timeout_secs=3):
-    link = r'http://localhost:8501/90%9f%d0%be%d0%b8%d1%81%d0%ba'
-    nav_script = r"""
-        <script type="text/javascript">
-            function attempt_nav_page(link){
-                var link = "http://localhost:8501/90%9f%d0%be%d0%b8%d1%81%d0%ba";
-
-                var links = window.parent.document.getElementsByTagName("a");
-
-                for (var i = 0; i < links.length; i++) {
-                    console.log(links[i].href.toLowerCase(), link);
-                    if (links[i].href == link) {
-                        links[i].click();
-                        return;
-                    }
-                }
-
-            }
-            window.addEventListener("load", function() {
-                attempt_nav_page("""+f'"{link}");'+"""
-            });
-        </script>
-    """
-    html(nav_script)
-
-
 st.title('Загрузить изображения лиц для поиска 👇')
 
 uploaded_files = st.file_uploader(

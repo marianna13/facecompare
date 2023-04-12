@@ -1,8 +1,6 @@
 import json
 import os
 from docarray import DocumentArray, Document
-import numpy as np
-from annlite import AnnLite
 
 
 def write_samples(keys, embs):
