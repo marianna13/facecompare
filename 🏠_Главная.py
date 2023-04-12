@@ -59,4 +59,4 @@ else:
         st.success(f'Сходство: {(1-sim):.3f}', icon="✅")
 
 st.write("---")
-st.write("""<div style="width:100%;text-align:center;"><a href="https://streamlit.io" style="float:center"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="22px"></img></a></div>""", unsafe_allow_html=True)
+st.write("""<div style="width:100%;text-align:center;"><a href="https://github.com/marianna13/IMDB_faces" style="float:center"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="22px"></img></a></div>""", unsafe_allow_html=True)
