@@ -51,7 +51,7 @@ else:
         i += 1
 
     submit = st.button('Загрузить')
-    model = load_model(chpt='app\checkpoints\infoVAE_39.pth')
+    model = load_model(chpt='checkpoints/infoVAE_39.pth')
     face1, face2 = faces
     face1, face2 = smart_resize(face1, 32), smart_resize(face2, 32)
     if submit:
