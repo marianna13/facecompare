@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from PIL import Image
 import torch
-
+from scipy.spatial.distance import cosine
 
 faceCascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
@@ -66,7 +66,7 @@ def get_cossim(face1, face2, model):
     b = model.encoder(process_img(face2)).detach().numpy()
     a = np.squeeze(a, axis=0).reshape(4*512)
     b = np.squeeze(b, axis=0).reshape(4*512)
-    cos_sim = sp.distance.cosine(a, b)
+    cos_sim = cosine(a, b)
     return cos_sim
 
 
