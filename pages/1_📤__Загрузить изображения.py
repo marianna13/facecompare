@@ -7,7 +7,7 @@ from utils.models import load_model
 import numpy as np
 from utils.face_utils import get_face_coords, get_cossim, smart_resize, get_emb
 
-model = load_model(chpt='app\checkpoints\infoVAE_39.pth')
+model = load_model(chpt='checkpoints/infoVAE_39.pth')
 
 st.title('Загрузить изображения лиц для поиска 👇')
 
