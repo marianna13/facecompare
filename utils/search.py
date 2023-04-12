@@ -6,7 +6,7 @@ import numpy as np
 import scipy.spatial as sp
 from utils.db import query_sample
 
-model = load_model(chpt='app\checkpoints\infoVAE_39.pth')
+model = load_model(chpt='checkpoints/infoVAE_39.pth')
 
 
 def get_data():
