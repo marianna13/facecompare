@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from PIL import Image
 import torch
-import scipy.spatial as sp
 
 
 faceCascade = cv2.CascadeClassifier(
