@@ -4,3 +4,4 @@ opencv-python
 numpy
 torch
 docarray
+facenet-pytorch

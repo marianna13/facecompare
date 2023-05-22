@@ -3,6 +3,10 @@ import numpy as np
 from PIL import Image
 import torch
 import scipy.spatial as sp
+from facenet_pytorch import MTCNN, InceptionResnetV1
+
+model = InceptionResnetV1(pretrained='vggface2').eval()
+mtcnn = MTCNN(image_size=160)
 
 
 faceCascade = cv2.CascadeClassifier(
@@ -71,8 +75,11 @@ def get_cossim(face1, face2, model):
     return cos_sim
 
 
-def get_sim(img1, img2):
-    face1 = get_face(img1)
-    face2 = get_face(img2)
-    cossim = (1 - get_cossim(face1, face2))*100
-    return f'{cossim:.4f}%'
+def get_embedding(img):
+    img_cropped = mtcnn(img)
+    img_embedding = model(img_cropped.unsqueeze(0))
+    return img_embedding
+
+
+def get_sim(emb1, emb2):
+    return 1-sp.distance.cosine(emb1.squeeze(0).detach().numpy(), emb2.squeeze(0).detach().numpy())
