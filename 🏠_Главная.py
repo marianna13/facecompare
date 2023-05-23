@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import io
 from utils.face_utils import get_face_coords, get_sim, smart_resize, get_embedding
-import numpy as np
+from docarray import DocumentArray, Document
 
 st.set_page_config(
     page_title="FaceCompare",
