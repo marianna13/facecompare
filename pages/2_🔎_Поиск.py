@@ -19,11 +19,11 @@ if uploaded_file:
     img = Image.open(io.BytesIO(bytes_data))
     x, y, w, h = get_face_coords(img)
     face = np.array(img)[y:y+h, x:x+w]
-    face = smart_resize(face, 32)
+    # face = smart_resize(face, 32)
     st.image(np.array(img)[y:y+h, x:x+w], width=300)
 
     submit = st.button('Поиск')
     if submit:
         st.markdown('### Результаты поиска:')
-        results = search(uploaded_file.name, face)
+        results = search(uploaded_file.name, img)
         st.write(results)

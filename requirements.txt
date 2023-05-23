@@ -3,6 +3,7 @@ pillow
 opencv-python
 numpy
 torch
-docarray
+docarray==0.21.0
 pydantic
 facenet-pytorch
+scipy

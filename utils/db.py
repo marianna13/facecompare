@@ -14,7 +14,8 @@ def write_samples(keys, embs):
 
 def query_sample(key, emb):
     da = DocumentArray.load('data.json', file_format='json')
-    q = Document(id=key, embedding=emb).match(da, metric='cosine')
+    q = Document(id=key, embedding=emb.detach().numpy()
+                 ).match(da, metric='cosine')
     return [{'id': m.id, 'scores': m.scores}
             for m in q.matches]
 

@@ -78,7 +78,7 @@ def get_cossim(face1, face2, model):
 def get_embedding(img):
     img_cropped = mtcnn(img)
     img_embedding = model(img_cropped.unsqueeze(0))
-    return img_embedding
+    return img_embedding.squeeze(0)
 
 
 def get_sim(emb1, emb2):
